@@ -132,3 +132,8 @@ void ADMCCharacter::MoveRight(float Value)
 		AddMovementInput(Direction, Value);
 	}
 }
+
+bool ADMCCharacter::isDead()
+{
+	return health <= 0;
+}

@@ -28,6 +28,9 @@ public:
 	/** Base look up/down rate, in deg/sec. Other scaling may affect final rate. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)
 	float BaseLookUpRate;
+	
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	bool isDead();
 
 protected:
 
@@ -62,6 +65,9 @@ protected:
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	// End of APawn interface
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Stats)
+	float health = 100.f;
 
 public:
 	/** Returns CameraBoom subobject **/
